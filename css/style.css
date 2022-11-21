@@ -1,0 +1,652 @@
+
+/****************************** General ***********************************/
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+
+/*************************** NavBar**********************************/
+
+.nav-bar
+{
+    height:80px;
+    width:100%;
+    background: black;
+    font-family: 'Sen', sans-serif;
+
+}
+
+.nav-bar .navbar-container
+{
+    display:flex;
+    align-items: center;
+    padding:0 50px;
+    height:100%;
+    color:#fff;
+
+}
+
+.nav-bar .navbar-container .logo
+{
+    flex: 1;
+}
+
+.nav-bar .navbar-container .logo h1 
+{
+    font-size: 30px;
+    color: #D0AC00;
+    cursor: pointer;
+    font-family: 'Rubik Distressed', cursive;
+    font-weight: 400;
+}
+
+.nav-bar .navbar-container .logo h1 span 
+{
+    font-size: 40px;
+    color: #D0AC00;
+}
+
+.nav-bar .navbar-container .menu
+{
+    flex: 3;
+    margin-left: 30px;
+}
+
+.nav-bar .navbar-container .menu ul
+{
+    list-style: none;
+    display: flex;
+}
+
+.nav-bar .navbar-container .menu ul li 
+{
+    font-size: 18px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.nav-bar .navbar-container .menu ul li:hover,
+.nav-bar .navbar-container .menu ul li.active,
+.nav-bar .navbar-container .menu-bar .toggle-menu ul li:hover,
+.nav-bar .navbar-container .menu-bar .toggle-menu ul li.active
+{
+    font-weight: bold;
+}
+
+.nav-bar .navbar-container .menu-bar
+{
+    display: none;
+    flex:1;
+    text-align: center;
+    
+
+}
+
+.nav-bar .navbar-container .menu-bar i
+{
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.nav-bar .navbar-container .menu-bar .toggle-menu
+{
+    display: none;
+    position: relative;
+}
+
+.nav-bar .navbar-container .menu-bar .toggle-menu.open
+{ 
+    display: block;
+}
+
+.nav-bar .navbar-container .menu-bar .toggle-menu ul
+{
+    list-style: none;
+    background: #151515;
+    color:#f5f5f5;
+    padding: 10px 30px;
+    border-radius:  0 0 6px 6px;
+    position: absolute;
+    top:24px;
+    left: 10%;
+    border: 1px solid #D0AC00;
+
+}
+
+.nav-bar .navbar-container .menu-bar .toggle-menu ul li
+{
+    font-size: 20px;
+    cursor: pointer;
+    margin: 25px;
+    text-align: center;
+}
+
+
+
+.nav-bar .navbar-container .profile
+{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-bar .navbar-container .profile img
+{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+.nav-bar .navbar-container .profile .text
+{
+    margin:0 10px;
+}
+
+.nav-bar .navbar-container .profile .toggle
+{
+    background: #fff;
+    width:40px;
+    height:20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+
+
+.nav-bar .navbar-container .profile .toggle i.fa-sun
+{
+    color:rgb(255, 114, 62) ;
+}
+
+.nav-bar .navbar-container .profile .toggle i.fa-moon
+{
+    color:rgb(221, 221, 221) ;
+}
+
+
+.nav-bar .navbar-container .profile .toggle .toggle-ball
+{
+    position: absolute;
+    width:18px;
+    height:18px;
+    border-radius: 50%;
+    background: rgb(44, 44, 44);
+    cursor: pointer;
+    right: 1px ;
+    transition: all ease-in-out 400ms ;
+}
+
+@media(max-width:991px){
+
+    .nav-bar .navbar-container .menu{
+        display: none;
+    }
+
+    .nav-bar .navbar-container .menu-bar{
+        display: block;
+    }
+
+}
+
+@media(max-width:650px){
+    
+    .nav-bar{
+        height: auto;
+        padding: 20px;
+    }
+    
+    .nav-bar .navbar-container{
+        flex-wrap: wrap;
+    }
+    
+    .nav-bar .navbar-container .logo{
+        min-width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .nav-bar .navbar-container .profile{
+        justify-content: center;
+    }
+}
+
+@media(max-width:460px){
+
+    .nav-bar .navbar-container .logo{
+        margin-left: -15px;
+        position: relative;
+        z-index: 3;
+    }
+
+    .nav-bar .navbar-container .profile .text span{
+        display: none;
+    }
+}
+
+
+
+/**************************** SideBar**********************************/
+
+.side-bar
+{
+    width:50px;
+    height:100%;
+    background: black;
+    color:#fff;
+    position: fixed;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    align-items: center;
+    
+}
+
+.side-bar i 
+{
+    font-size: 23px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+
+@media(max-width:650px){
+    .side-bar{
+        padding-top: 160px;
+    }
+}
+
+/***************************************************************************/
+
+.container
+{
+    background-color:#151515;
+    color:#fff;
+    min-height:calc(100vh - 80px);
+}
+
+.container .content-container
+{
+    margin-left: 50px;
+}
+
+/***************************************************************************/
+
+
+.featured-content.wildlife{
+    background-image : linear-gradient(to bottom , rgb(0,0,0,0) , #151515) , url(../img/01-wildlife.jpg);
+}
+
+.featured-content.science{
+    background-image : linear-gradient(to bottom , rgb(0,0,0,0) , #151515) , url(../img/02-science.jpg)
+}
+
+.featured-content.history{
+    background-image : linear-gradient(to bottom , rgb(0,0,0,0) , #151515) , url(../img/03-history.jpg)
+}
+
+.featured-content.disaster{
+    background-image : linear-gradient(to bottom , rgb(0,0,0,0) , #151515) , url(../img/04-disaster.jpg)
+}
+
+
+.featured-content
+{
+    padding:60px 40px;
+    margin-bottom: 40px;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.featured-content h2{
+    font-family: 'Rubik Distressed', cursive;
+    font-size: 36px;
+    font-weight:400;
+    color:#EC3226;
+    text-transform: uppercase;
+}
+
+.featured-content p
+{
+    color:rgb(177, 177, 177);
+    margin: 30px 0;
+    width:40%;
+    line-height: 1.5;
+}
+
+.featured-content button
+{
+    background: #D0AC00;
+    font-weight: bold;
+    padding:10px 15px;
+    color:#111;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+}
+
+@media(max-width:768px){
+    .featured-content p{
+        width:60%;
+    }
+}
+
+
+/***************************************************************************/
+
+.movie-container
+{
+    padding:5px 40px;  
+}
+
+.movie-container h3
+{
+    margin: 10px 0;
+    letter-spacing: .5px;
+}
+
+.movie-container .wrapper
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-container .movie-list
+{
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0px);
+    transition: all ease-in-out 700ms;
+}
+
+.movie-container .movie-list .movie 
+{
+    min-width: 23%;
+    margin-right: 1%;
+    margin-left: 1%;
+    position: relative;
+
+}
+
+.movie-container .movie img
+{
+    width:100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all ease-in-out 700ms;
+    border-radius: 5px;
+}
+
+.movie-container .movie h4
+{
+    font-size: 28px;
+    font-weight: bold;
+    padding:6px 10px 6px 0;
+    border-radius: 3px;
+    color: #D0AC00;
+    position: absolute;
+    top:5%;
+    left:6%;
+    transition: all ease-in-out 700ms;
+    opacity: 0;
+    -webkit-text-stroke: 0.1px black; /* works for mozilla, while -moz- didn't, don't know why ?!*/
+}
+
+.movie-container .movie p
+{
+    font-size: 14px;
+    padding:10px 0;
+    border-radius: 3px;
+    color:#fff;
+    position: absolute;
+    top:30%;
+    left:6%;
+    width:90%;
+    transition: all ease-in-out 700ms;
+    opacity: 0;
+}
+
+.movie-container .movie button
+{
+    background: #D0AC00;
+    font-weight: bold;
+    padding:8px 10px;
+    color:#111;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: absolute;
+    top:84%;
+    left:6%;
+    transition: all ease-in-out 700ms;
+    opacity: 0;
+}
+
+.movie-container .movie-list .movie:hover img
+{
+    transform: scale(1.15);
+    opacity: 0.4;
+
+}
+
+.movie-container .movie-list .movie:hover h4,
+.movie-container .movie-list .movie:hover p,
+.movie-container .movie-list .movie:hover button
+{
+    opacity: 1;
+}
+
+.movie-container .wrapper i
+{
+    font-size: 100px;
+    color:rgba(204, 204, 204, 0.4) ;
+    position: absolute;
+    cursor: pointer;
+    transition: all ease-in-out 700ms;
+    bottom:103px;
+    -webkit-text-stroke: 0.3px #333;
+}
+
+.movie-container .wrapper i:hover
+{
+    color:rgba(204, 204, 204, 0.8) ;
+
+}
+
+.movie-container .wrapper i.arrow-rt
+{
+    right:5px;
+}
+
+.movie-container .wrapper i.arrow-left
+{
+    left:5px;
+    display: none;
+}
+
+
+
+
+@media (min-width:650px) and (max-width:991px){
+
+
+    .movie-container .movie-list .movie{
+        min-width: 46%;
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+
+}
+
+@media (min-width:500px) and (max-width:649px){
+
+
+    .movie-container .movie-list .movie{
+        min-width: 70%;
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+
+}
+
+@media (max-width:499px){
+
+
+    .movie-container .movie-list .movie{
+        min-width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+}
+
+
+/*********************************  Footer ******************************************/
+
+
+.footer
+{
+    background: black;
+    padding: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.footer i 
+{
+    font-size: 22px;
+    color:#D0AC00;
+}
+
+.footer a 
+{
+    text-decoration: none;
+    font-weight: bold;
+    color:#D0AC00;
+}
+
+
+
+/*******************************  Light Mode *************************************/
+
+.nav-bar.light
+{
+    background:#e5e5e5 ;
+}
+
+.nav-bar .navbar-container.light
+{
+    background:#e5e5e5 ;
+    color:#151515;
+}
+
+.nav-bar .navbar-container .profile .toggle.light
+{
+    background: #424242;
+}
+
+.nav-bar .navbar-container .profile .toggle .toggle-ball.light
+{
+    background: #f5f5f5;
+    transform: translateX(-20px);
+}
+
+.side-bar.light
+{
+    background: #e5e5e5;
+    color: #151515;
+}
+
+.nav-bar .navbar-container .menu-bar .toggle-menu ul.light
+{
+    background-color:#f5f5f5;
+    color:#151515;
+    
+}
+
+.container.light
+{
+    background-color:#f5f5f5;
+    color:#151515;
+}
+
+.container.light .movie-container .movie h4
+{
+    color: #D0AC00;
+    -webkit-text-stroke: 0.2px black; /* works for mozilla, while -moz- didn't, don't know why ?!*/
+}
+
+.container.light .movie-container .movie p
+{
+    color:#000;
+}
+
+
+.footer.light
+{
+    background: #e5e5e5;
+    color: #151515;
+}
+
+/***************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
